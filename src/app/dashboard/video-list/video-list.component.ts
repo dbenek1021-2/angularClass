@@ -10,5 +10,16 @@ const videoList = [{ "title": "Tips from Angular Book Camp instructors", "author
 export class VideoListComponent {
 
   videos = videoList;
+  selectedVideo: any;
+
+  selectVideo(video: any) {
+    if (this.selectVideo === video.id){
+      this.selectedVideo = null;
+    }
+    else {
+      this.selectedVideo = video;
+    }
+    
+  }
 
 }

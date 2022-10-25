@@ -1,11 +1,10 @@
-<div class="card-container">
+<div class="card-container-video-list">
     <div class="card highlight-card">Top 10 Preview</div>
-    <ul>
-        <div class="video-item" *ngFor="let video of videos; index as i">
-            <img [src]="'https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg'" [alt]="video.title">
-            <div>
-                {{ video.title }} {{ video.author }}
-            </div>
+    <div class="video-item" *ngFor="let video of videos" (click)="selectVideo(video)"
+        [class.selected]="video.id === selectedVideo?.id">
+        <img [src]="'https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg'" [alt]="video.title">
+        <div>
+            {{ video.title }} {{ video.author }}
         </div>
-    </ul>
-</div>
+    </div>
+    </div>
