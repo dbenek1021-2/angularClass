@@ -1,1 +1,11 @@
-<p>video-list works woot!</p>
+<div class="card-container">
+    <div class="card highlight-card">Top 10 Preview</div>
+    <ul>
+        <div class="video-item" *ngFor="let video of videos; index as i">
+            <img [src]="'https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg'" [alt]="video.title">
+            <div>
+                {{ video.title }} {{ video.author }}
+            </div>
+        </div>
+    </ul>
+</div>
