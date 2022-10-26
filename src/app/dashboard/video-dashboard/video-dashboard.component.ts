@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { Video, VideoDataService } from '../../video-data.service';
 
 const apiUrl = 'https://api.angularbootcamp.com/videos';
@@ -9,15 +10,11 @@ const apiUrl = 'https://api.angularbootcamp.com/videos';
   styleUrls: ['./video-dashboard.component.scss'],
 })
 export class VideoDashboardComponent {
-  videoList: Video[] = [];
+  videoList: Observable<Video[]>;
   currentVideo: Video | null = null;
-  loading = true;
 
   constructor(svc: VideoDataService) {
-    svc.loadVideos().subscribe((videos) => {
-      this.videoList = videos;
-      this.loading = false;
-    });
+    this.videoList = svc.loadVideos();
   }
 
   selectVideo(video: Video) {

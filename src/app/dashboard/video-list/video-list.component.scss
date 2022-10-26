@@ -1,17 +1,18 @@
 .video-item {
-    border: 2px solid rgb(29, 188, 188);
-    border-radius: 5px;
-    margin-bottom: 5px;
-    max-width: 400px;
-    margin-top: 20%;
-    text-align: center;
-    padding: 15px;
-    background-color:#1976d2;
-    color: white;
-    cursor: pointer;
+  border: 5px solid rgb(66, 184, 66);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  max-width: 400px;
+  margin-top: 20%;
+  text-align: center;
+  padding: 15px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
 
-    &.selected {
-        background-color: rgb(66, 184, 66);
-        color: white;
-      }
+  &.selected {
+    border: 5px solid #1976d2;
+    background-color: rgb(66, 184, 66);
+    color: white;
+  }
 }

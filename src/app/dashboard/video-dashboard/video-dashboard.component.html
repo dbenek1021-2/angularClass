@@ -1,6 +1,6 @@
 <app-video-list
   (videoSelected)="selectVideo($event)"
-  [videos]="videoList"
+  [videos]="(videoList | async) ?? []"
   [selectedVideo]="currentVideo ?? undefined"
 ></app-video-list>
 <!-- ?? - undefined, null -->
