@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Video } from '../video-dashboard/video-dashboard.component';
+import { Video } from '../../video-data.service';
 
 @Component({
   selector: 'app-video-thumbnail',
