@@ -1,1 +1,9 @@
-<p>video-player works!</p>
+<ng-container *ngIf="video">
+    <p>{{ video.id }}</p>
+    <p>{{ video.title }}</p>
+    <p>{{ video.author }}</p>
+</ng-container>
+
+<ng-container *ngIf="!video">
+    <p>Select a Video!</p>
+</ng-container>

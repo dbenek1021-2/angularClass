@@ -1,3 +1,9 @@
-<app-video-list [videos]="videoList"></app-video-list>
-<app-video-player></app-video-player>
+<app-video-list
+  (videoSelected)="selectVideo($event)"
+  [videos]="videoList"
+  [selectedVideo]="currentVideo ?? undefined"
+></app-video-list>
+<!-- ?? - undefined, null -->
+<!-- || - falsy (undefined, null, '', 0 , false) -->
+<app-video-player [video]="currentVideo ?? undefined"></app-video-player>
 <app-stat-filters></app-stat-filters>

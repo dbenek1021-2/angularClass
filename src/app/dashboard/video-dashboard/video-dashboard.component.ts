@@ -208,4 +208,13 @@ export interface Video {
 })
 export class VideoDashboardComponent {
   videoList = sampleData;
+  currentVideo: Video | null = null;
+
+  selectVideo(video: Video) {
+    if (this.currentVideo?.id === video.id) {
+      this.currentVideo = null;
+    } else {
+      this.currentVideo = video;
+    }
+  }
 }
