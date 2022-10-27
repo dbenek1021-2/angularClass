@@ -1,7 +1,12 @@
-<app-video-thumbnail
-  class="video-item"
+<a
   *ngFor="let v of videos"
-  [video]="v"
-  (click)="videoClicked(v)"
-  [class.selected]="v.id === selectedVideo?.id"
-></app-video-thumbnail>
+  routerLink
+  [queryParams]="{ videoId: v.id }"
+  queryParamsHandling="merge"
+>
+  <app-video-thumbnail
+    class="video-item"
+    [video]="v"
+    [class.selected]="v.id === selectedVideoId"
+  ></app-video-thumbnail>
+</a>

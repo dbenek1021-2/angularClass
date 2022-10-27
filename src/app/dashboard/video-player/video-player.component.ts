@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Video } from '../../video-data.service';
 
 @Component({
   selector: 'app-video-player',
@@ -7,5 +6,5 @@ import { Video } from '../../video-data.service';
   styleUrls: ['./video-player.component.scss'],
 })
 export class VideoPlayerComponent {
-  @Input() video?: Video;
+  @Input() videoId: string | null = null;
 }

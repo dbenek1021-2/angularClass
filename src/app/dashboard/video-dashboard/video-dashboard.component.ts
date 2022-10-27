@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import { Video, VideoDataService } from '../../video-data.service';
 
 const apiUrl = 'https://api.angularbootcamp.com/videos';
@@ -8,21 +9,15 @@ const apiUrl = 'https://api.angularbootcamp.com/videos';
   selector: 'app-video-dashboard',
   templateUrl: './video-dashboard.component.html',
   styleUrls: ['./video-dashboard.component.scss'],
-  
 })
 export class VideoDashboardComponent {
   videoList: Observable<Video[]>;
-  currentVideo: Video | null = null;
+  selectedVideoId: Observable<string | null>;
 
-  constructor(svc: VideoDataService) {
-    this.videoList = svc.loadVideos();
-  }
-
-  selectVideo(video: Video) {
-    if (this.currentVideo?.id === video.id) {
-      this.currentVideo = null;
-    } else {
-      this.currentVideo = video;
-    }
+  constructor(vds: VideoDataService, route: ActivatedRoute) {
+    this.videoList = vds.loadVideos();
+    this.selectedVideoId = route.queryParamMap.pipe(
+      map((paramMap) => paramMap.get('videoId'))
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Video } from '../../video-data.service';
 
@@ -9,11 +9,5 @@ import { Video } from '../../video-data.service';
 })
 export class VideoListComponent {
   @Input() videos: Video[] = [];
-  @Input() selectedVideo?: Video | undefined;
-
-  @Output() videoSelected = new EventEmitter<Video>(); // ctrl + .
-
-  videoClicked(video: Video) {
-    this.videoSelected.emit(video);
-  }
+  @Input() selectedVideoId: string | null = null;
 }
