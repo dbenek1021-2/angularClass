@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule // Make HTTP services available to the application
+    HttpClientModule, // Make HTTP services available to the application
   ],
   providers: [],
   bootstrap: [AppComponent]

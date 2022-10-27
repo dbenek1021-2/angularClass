@@ -8,6 +8,7 @@ const apiUrl = 'https://api.angularbootcamp.com/videos';
   selector: 'app-video-dashboard',
   templateUrl: './video-dashboard.component.html',
   styleUrls: ['./video-dashboard.component.scss'],
+  
 })
 export class VideoDashboardComponent {
   videoList: Observable<Video[]>;

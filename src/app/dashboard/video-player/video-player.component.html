@@ -1,9 +1,10 @@
-<ng-container *ngIf="video">
-    <p>{{ video.id }}</p>
-    <p>{{ video.title }}</p>
-    <p>{{ video.author }}</p>
-</ng-container>
+<div class="marginTop">
+    <ng-container *ngIf="video">
+        <p>{{ video.id }}</p>
+        <p>{{ video.title }}</p>
+        <p>{{ video.author }}</p>
+    </ng-container>
 
-<ng-container *ngIf="!video">
-    <p>Select a Video!</p>
-</ng-container>
+    <ng-container *ngIf="!video">
+    </ng-container>
+</div>
